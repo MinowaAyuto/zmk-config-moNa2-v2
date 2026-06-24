@@ -68,6 +68,8 @@
     status = "okay";
     device = <&trackball_central>;
 
+     input-processors = <&zip_temp_layer 5 10000>; // ← これを追加
+
     scroller {
         layers = <3>;
         input-processors = 
@@ -78,4 +80,15 @@
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
     };
 
+};
+
+&zip_temp_layer {
+    excluded-positions = <
+        16 // MB3（S位置）
+        17 // MB2（D位置）
+        18 // MB1（F位置）
+        26 // MB1（J位置）
+        27 // MB2（K位置）
+        28 // MB3（L位置）
+    >;
 };
