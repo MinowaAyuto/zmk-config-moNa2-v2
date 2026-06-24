@@ -68,7 +68,10 @@
     status = "okay";
     device = <&trackball_central>;
 
-     input-processors = <&zip_temp_layer 5 10000>; // ← これを追加
+     input-processors = 
+     <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,  // ← 追加
+     <&zip_temp_layer 5 10000>; // ← これを追加
+     
 
     scroller {
         layers = <3>;
